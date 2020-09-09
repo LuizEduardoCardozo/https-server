@@ -6,7 +6,7 @@ const certificate = fs.readFileSync('./localhost.crt');
 const express = require('express');
 const app = express();
 const { static } = require('express');
-const server = require('https').createServer({key:privateKey,cert:certificate }, app);
+const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const { v4 } = require('uuid');
  

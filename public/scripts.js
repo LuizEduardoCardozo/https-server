@@ -17,7 +17,6 @@ navigator.mediaDevices.getUserMedia({
 
     peer.on('call', (call) => {
         call.answer();
-        console.log("Olá, mundo!");
         const video = document.createElement('video');
         call.on('stream', (userVideoStream) => {
             addVideoStream(video, userVideoStream);

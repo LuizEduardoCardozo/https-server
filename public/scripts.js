@@ -2,8 +2,9 @@ const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
 
 const peer = new Peer(undefined, {
-    host: '/',
-    port: (3001).toString(),
+    secure: true,
+    host: 'https://peerjs-server-test-web.herokuapp.com/',
+    port: 443,
 })
 
 const video = document.createElement('video');
@@ -17,6 +18,7 @@ navigator.mediaDevices.getUserMedia({
 
     peer.on('call', (call) => {
         call.answer();
+        console.log("Olá, mundo!");
         const video = document.createElement('video');
         call.on('stream', (userVideoStream) => {
             addVideoStream(video, userVideoStream);

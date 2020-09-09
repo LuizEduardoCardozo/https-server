@@ -1,8 +1,5 @@
 const fs = require('fs');
 
-const privateKey = fs.readFileSync('./localhost.key');
-const certificate = fs.readFileSync('./localhost.crt');
-
 const express = require('express');
 const app = express();
 const { static } = require('express');
